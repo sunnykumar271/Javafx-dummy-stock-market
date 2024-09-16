@@ -21,11 +21,11 @@ public class NewFXMain extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXML.fxml"));
         
         Scene scene = new Scene(root);
-        
-        primaryStage.setTitle("Hello World!");
+        scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());
+        primaryStage.setTitle("Bear & Bullz!");
         primaryStage.setScene(scene);
-         primaryStage.setMinWidth(600);
-        primaryStage.setMinHeight(400);
+        primaryStage.setFullScreen(true);
+        primaryStage.centerOnScreen();
         primaryStage.show();
     }
 
