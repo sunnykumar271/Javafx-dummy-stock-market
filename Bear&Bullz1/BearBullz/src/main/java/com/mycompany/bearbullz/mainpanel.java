@@ -26,11 +26,11 @@ public class mainpanel extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         
-
+        
         Parent root = FXMLLoader.load(getClass().getResource("mainpanel.fxml"));
         
         Scene scene = new Scene(root, 300, 250);
-        
+        System.out.println("Hello");
         primaryStage.setTitle("Bear & Bullz");
         primaryStage.setScene(scene);
          scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());

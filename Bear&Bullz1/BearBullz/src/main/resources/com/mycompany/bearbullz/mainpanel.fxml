@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bearbullz.mainpanelcontroller">
    <children>
       <Pane prefHeight="1080.0" prefWidth="209.0" styleClass="pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -19,13 +19,13 @@
                </image>
             </ImageView>
             <Label alignment="CENTER" prefHeight="59.0" prefWidth="200.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Full Name" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="200.0" text="Home" />
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="200.0" text="Portfolio" />
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="200.0" text="LeaderBoards" />
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="200.0" text="Profile" />
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="200.0" text="Donate" />
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="200.0" text="About Us" />
-            <Button mnemonicParsing="false" prefHeight="59.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Logout" textFill="#dd0606" />
+            <Button mnemonicParsing="false" onAction="#home" prefHeight="59.0" prefWidth="200.0" text="Home" />
+            <Button mnemonicParsing="false" onAction="#portfolio" prefHeight="59.0" prefWidth="200.0" text="Portfolio" />
+            <Button mnemonicParsing="false" onAction="#leaderboards" prefHeight="59.0" prefWidth="200.0" text="LeaderBoards" />
+            <Button mnemonicParsing="false" onAction="#profile" prefHeight="59.0" prefWidth="200.0" text="Profile" />
+            <Button mnemonicParsing="false" onAction="#donate" prefHeight="59.0" prefWidth="200.0" text="Donate" />
+            <Button mnemonicParsing="false" onAction="#aboutUs" prefHeight="59.0" prefWidth="200.0" text="About Us" />
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="59.0" prefWidth="200.0" style="-fx-font-weight: bold;" text="Logout" textFill="#dd0606" />
          </children>
       </VBox>
    </children>
