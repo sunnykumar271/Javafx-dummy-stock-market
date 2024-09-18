@@ -31,7 +31,7 @@ public class mainpanel extends Application {
         
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Bear & Bullz");
         primaryStage.setScene(scene);
          scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());
         primaryStage.setFullScreen(true);
