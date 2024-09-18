@@ -4,8 +4,12 @@
  */
 package com.mycompany.bearbullz;
 
+import java.io.IOException;
 import java.util.Optional;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
@@ -16,10 +20,13 @@ import javafx.stage.Stage;
  * @author Anshu
  */
 public class mainpanelcontroller {
-   
-
+   Stage stage;
+  
     
-
+    // Assign the stage after FXMLLoader loads the controller
+    public void setStage(Stage s) {
+        this.stage = s;
+    }
     public void home(ActionEvent e)
     {
         System.out.println("Home");
@@ -50,14 +57,15 @@ public class mainpanelcontroller {
         System.out.println("Home");
         
     }
-    public void logout(ActionEvent e)
+    public void logout(ActionEvent e) throws IOException
     {
                 // Create a confirmation alert
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Logout Confirmation");
         alert.setHeaderText(null);
         alert.setContentText("Are you sure you want to logout?");
-
+        
+            
         // Show the alert and wait for the user's response
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -65,6 +73,15 @@ public class mainpanelcontroller {
             System.out.println("User logged out.");
             
             // Place your logout logic here, such as closing the stage or redirecting to the login page
+            //login page
+            Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("loginpage.css").toExternalForm());
+
+        stage.setTitle("Login Page");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
         } else {
             // User canceled the logout
             System.out.println("Logout canceled.");

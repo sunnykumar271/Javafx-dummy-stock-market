@@ -13,7 +13,7 @@ public class LogInSignUp extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("loginpage.css").toExternalForm());
-
+        primaryStage.centerOnScreen();
         primaryStage.setTitle("Login Page");
         primaryStage.setScene(scene);
         primaryStage.show();
