@@ -1,11 +1,7 @@
 com\mycompany\bearbullz\LogInSignUp.class
 com\mycompany\bearbullz\mongodbtest.class
 com\mycompany\bearbullz\mainpanel.class
-<<<<<<< HEAD
 com\mycompany\bearbullz\JavaFXPage.class
 com\mycompany\bearbullz\LogInSignUpController.class
 com\mycompany\bearbullz\FXMLDocumentController.class
-=======
-com\mycompany\bearbullz\LogInSignUpController.class
->>>>>>> 0c226f076893831f0d8f9aea9653541caaaa0a4e
 com\mycompany\bearbullz\mainpanelcontroller.class

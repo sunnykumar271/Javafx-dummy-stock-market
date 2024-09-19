@@ -24,7 +24,7 @@ public class JavaFXPage extends Application {
         
         mpc.setStage(stage);
         Scene scene = new Scene(root);
-        
+        scene.getStylesheets().add(getClass().getResource("signup2.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
