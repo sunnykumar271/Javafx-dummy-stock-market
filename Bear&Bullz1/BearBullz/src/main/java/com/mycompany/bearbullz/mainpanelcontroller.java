@@ -74,8 +74,11 @@ public class mainpanelcontroller {
             
             // Place your logout logic here, such as closing the stage or redirecting to the login page
             //login page
-            Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-        Scene scene = new Scene(root);
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("LoginPage.fxml"));
+            Parent root = loader.load();
+             LogInSignUpController mpc=loader.getController();
+             Scene scene = new Scene(root);
+             mpc.setStage(stage);
         scene.getStylesheets().add(getClass().getResource("loginpage.css").toExternalForm());
 
         stage.setTitle("Login Page");
