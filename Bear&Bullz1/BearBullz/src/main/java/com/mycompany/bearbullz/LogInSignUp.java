@@ -10,7 +10,10 @@ public class LogInSignUp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("LoginPage.fxml"));
+        Parent root = loader.load();
+        LogInSignUpController mpc=loader.getController();
+        mpc.setStage(primaryStage);
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("loginpage.css").toExternalForm());
         primaryStage.centerOnScreen();
