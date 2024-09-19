@@ -1,4 +1,5 @@
 com\mycompany\bearbullz\mainpanel.class
 com\mycompany\bearbullz\PrimaryController.class
-com\mycompany\bearbullz\SecondaryController.class
 com\mycompany\bearbullz\App.class
+com\mycompany\bearbullz\SecondaryController.class
+com\mycompany\bearbullz\donateus.class
