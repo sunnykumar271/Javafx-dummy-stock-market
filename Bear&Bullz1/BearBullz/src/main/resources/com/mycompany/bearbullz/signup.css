@@ -1,0 +1,48 @@
+/* Styling the overall VBox layout */
+
+
+/* Header label styling */
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: yellow;
+}
+
+/* Input fields styling */
+TextField, PasswordField {
+    -fx-pref-width: 250px;
+    -fx-padding: 10;
+    -fx-border-radius: 5;
+    -fx-border-color: #ccc;
+    -fx-border-width: 2;
+}
+
+/* Signup button styling */
+Button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5;
+}
+
+Button:hover {
+    -fx-background-color: #388e3c;
+}
+
+/* Login link button styling */
+.link-button {
+    -fx-text-fill: #1e90ff;
+    -fx-underline: true;
+    -fx-background-color: transparent;
+}
+
+.link-button:hover {
+    -fx-text-fill: #ff4500;
+}
+
+/* Styling the label under buttons */
+.text-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #757575;
+}

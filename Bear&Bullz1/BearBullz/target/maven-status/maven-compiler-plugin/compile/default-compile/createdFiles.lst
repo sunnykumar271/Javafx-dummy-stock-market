@@ -1,5 +1,7 @@
 com\mycompany\bearbullz\LogInSignUp.class
 com\mycompany\bearbullz\mongodbtest.class
 com\mycompany\bearbullz\mainpanel.class
+com\mycompany\bearbullz\SignupPage.class
+com\mycompany\bearbullz\SignupController.class
 com\mycompany\bearbullz\LogInSignUpController.class
 com\mycompany\bearbullz\mainpanelcontroller.class
