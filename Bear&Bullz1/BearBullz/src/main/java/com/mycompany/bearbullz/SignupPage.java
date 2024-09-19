@@ -6,20 +6,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class LogInSignUp extends Application {
+public class SignupPage extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("LoginPage.fxml"));
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("SignupPage.fxml"));
         Parent root = loader.load();
-        LogInSignUpController mpc=loader.getController();
+        SignupController mpc=loader.getController();
         mpc.setStage(primaryStage);
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("loginpage.css").toExternalForm());
-        primaryStage.centerOnScreen();
-        primaryStage.setTitle("Login Page");
+        Scene scene = new Scene(root, 400, 400);
+        scene.getStylesheets().add(getClass().getResource("signup.css").toExternalForm());
+        primaryStage.setTitle("Signup Page");
         primaryStage.setScene(scene);
+
         primaryStage.show();
+        
     }
 
     public static void main(String[] args) {
