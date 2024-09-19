@@ -27,7 +27,7 @@ public class donateus extends Application {
       public void start(Stage primaryStage) throws IOException {
         
 
-        Parent root = FXMLLoader.load(getClass().getResource("newfile.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("donation.fxml"));
         
         Scene scene = new Scene(root);
         
