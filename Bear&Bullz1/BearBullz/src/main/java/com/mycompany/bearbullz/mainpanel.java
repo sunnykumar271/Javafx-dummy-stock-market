@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import static javafx.fxml.FXMLLoader.load;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,12 +27,13 @@ public class mainpanel extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         
-
-        Parent root = FXMLLoader.load(getClass().getResource("mainpanel.fxml"));
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("mainpanel.fxml"));
+        Parent root = loader.load();
+        mainpanelcontroller mpc=loader.getController();
+        mpc.setStage(primaryStage);
+        Scene scene = new Scene(root);
+        System.out.println("Hello");
+        primaryStage.setTitle("Bear & Bullz");
         primaryStage.setScene(scene);
          scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());
         primaryStage.setFullScreen(true);

@@ -1,5 +1,6 @@
+com\mycompany\bearbullz\LogInSignUp.class
+com\mycompany\bearbullz\mongodbtest.class
 com\mycompany\bearbullz\mainpanel.class
-com\mycompany\bearbullz\PrimaryController.class
-com\mycompany\bearbullz\App.class
-com\mycompany\bearbullz\SecondaryController.class
+com\mycompany\bearbullz\LogInSignUpController.class
 com\mycompany\bearbullz\donateus.class
+com\mycompany\bearbullz\mainpanelcontroller.class
