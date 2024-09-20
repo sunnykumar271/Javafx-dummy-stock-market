@@ -37,6 +37,7 @@ public class SignupController {
         if (password.equals(confirmPassword)) {
             // Handle successful signup (e.g., save user to database)
             System.out.println("Signup successful with email: " + email);
+            QuickStart.addUser(email, password);
         } else {
             // Handle password mismatch
             System.out.println("Passwords do not match.");

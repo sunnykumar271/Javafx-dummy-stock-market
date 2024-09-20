@@ -18,7 +18,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 public class QuickStart {
-    public static void main( String[] args ) {
+    public static void addUser( String gmail,String password ) {
 
         // Replace the placeholder with your MongoDB deployment's connection string
         String uri = "mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/";
@@ -26,13 +26,13 @@ public class QuickStart {
          // Create a MongoClient instance
         try (MongoClient mongoClient = MongoClients.create(uri)) {
             // Connect to the database
-            MongoDatabase database = mongoClient.getDatabase("testDatabase"); // Replace with your database name
+            MongoDatabase database = mongoClient.getDatabase("BEARBULLZ"); // Replace with your database name
 
             // Access the collection
-            MongoCollection<Document> collection = database.getCollection("testCollection"); // Replace with your collection name
+            MongoCollection<Document> collection = database.getCollection("USERS"); // Replace with your collection name
 
             // Check for a document
-            Document query = new Document("name", "John Doe");
+            Document query = new Document("GMAIL",gmail);
             Document existingDocument = collection.find(query).first();
 
             if (existingDocument != null) {
@@ -46,9 +46,8 @@ public class QuickStart {
                 System.out.println("Document not found. Adding new document...");
 
                 // Insert a new document
-                Document newDocument = new Document("name", "John Doe")
-                        .append("age", 30)
-                        .append("city", "New York");
+                Document newDocument = new Document("GMAIL", gmail)
+                        .append("PASSWORD", password);
                 collection.insertOne(newDocument);
                 System.out.println("New document inserted successfully!");
             }
