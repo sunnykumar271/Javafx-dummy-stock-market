@@ -16,9 +16,17 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-
 public class QuickStart {
-    public static void addUser( String gmail,String password ) {
+    public static void main(String args[])
+    {
+         boolean isValid = validateUser("Osamabin", "Hello");
+        if (isValid) {
+            System.out.println("User validated successfully.");
+        } else {
+            System.out.println("Invalid GMAIL or PASSWORD.");
+        }
+    }
+    public static boolean addUser( String gmail,String password ) {
 
         // Replace the placeholder with your MongoDB deployment's connection string
         String uri = "mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/";
@@ -36,12 +44,7 @@ public class QuickStart {
             Document existingDocument = collection.find(query).first();
 
             if (existingDocument != null) {
-                System.out.println("Document found: " + existingDocument.toJson());
-
-                // Update the document
-                Document update = new Document("$set", new Document("age", 31));
-                collection.updateOne(query, update);
-                System.out.println("Document updated successfully!");
+               return false;
             } else {
                 System.out.println("Document not found. Adding new document...");
 
@@ -50,10 +53,32 @@ public class QuickStart {
                         .append("PASSWORD", password);
                 collection.insertOne(newDocument);
                 System.out.println("New document inserted successfully!");
+                return true;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+return false;    }
+    
+     public static boolean validateUser(String GMail, String password) {
+        // Connect to MongoDB Atlas (replace <connection_string> with your actual connection string)
+        MongoClient mongoClient = MongoClients.create("mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/");
+        MongoDatabase database = mongoClient.getDatabase("BEARBULLZ");
+        MongoCollection<Document> collection = database.getCollection("USERS");
+
+        // Check if user exists with the given GMAIL
+        Document userDoc = collection.find(new Document("GMAIL", GMail)).first();
+
+        if (userDoc == null) {
+            // User does not exist
+            mongoClient.close();
+            return false;
+        }
+
+        // Check if the password is correct
+        String storedPassword = userDoc.getString("PASSWORD");
+        mongoClient.close();
+        return storedPassword.equals(password);
     }
 }
 
