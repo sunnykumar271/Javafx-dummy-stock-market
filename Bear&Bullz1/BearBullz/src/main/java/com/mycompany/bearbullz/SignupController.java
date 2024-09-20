@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 public class SignupController {
     Stage stage;
+ 
     public void setStage(Stage s) {
         this.stage = s;
     }
@@ -29,7 +30,7 @@ public class SignupController {
     private Button signupButton;
 
     @FXML
-    private void handleSignup() {
+    private void handleSignup() throws IOException{
         String email = emailField.getText();
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
@@ -38,6 +39,17 @@ public class SignupController {
             // Handle successful signup (e.g., save user to database)
             System.out.println("Signup successful with email: " + email);
             QuickStart.addUser(email, password);
+             FXMLLoader loader=new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+             Parent root = loader.load();
+             FXMLDocumentController mpc=loader.getController();
+             mpc.getEmail(email);
+             mpc.setStage(stage);
+             Scene scene=new Scene(root);
+             mpc.setStage(stage);
+             scene.getStylesheets().add(getClass().getResource("signup2.css").toExternalForm());
+             stage.setTitle("SignUp");
+             stage.setScene(scene);
+            stage.show();
         } else {
             // Handle password mismatch
             System.out.println("Passwords do not match.");
