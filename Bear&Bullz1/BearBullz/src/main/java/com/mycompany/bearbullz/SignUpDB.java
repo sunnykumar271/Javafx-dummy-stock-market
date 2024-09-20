@@ -48,8 +48,8 @@ public class SignUpDB {
                 System.out.println("Document not found. Adding new document...");
 
                 // Insert a new document
-                Document newDocument = new Document("GMAIL", gmail)
-                        .append("PASSWORD", password);
+            //    Document newDocument = new Document("GMAIL", gmail)
+            //            .append("PASSWORD", password);
                 collection.insertOne(newDocument);
                 System.out.println("New document inserted successfully!");
             }
