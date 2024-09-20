@@ -1,6 +1,17 @@
 com\mycompany\bearbullz\LogInSignUp.class
 com\mycompany\bearbullz\mongodbtest.class
 com\mycompany\bearbullz\mainpanel.class
+<<<<<<< HEAD
+com\mycompany\bearbullz\SignupPage.class
+com\mycompany\bearbullz\SignupController.class
+=======
+com\mycompany\bearbullz\JavaFXPage.class
+>>>>>>> f965ca8ad4c1b698f0b7bb957fe3b81b394890a1
+com\mycompany\bearbullz\LogInSignUpController.class
+com\mycompany\bearbullz\donateus.class
+
+com\mycompany\bearbullz\FXMLDocumentController.class
+com\mycompany\bearbullz\QuickStart.class
 com\mycompany\bearbullz\LogInSignUpController.class
 com\mycompany\bearbullz\Main.class
 com\mycompany\bearbullz\AboutUsController.class
