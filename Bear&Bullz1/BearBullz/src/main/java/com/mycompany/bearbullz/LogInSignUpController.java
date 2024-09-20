@@ -47,9 +47,19 @@ public class LogInSignUpController {
     }
 
     @FXML
-    private void handleSignupAction()  {
-        showAlert("Signup", "Redirecting to signup page...");
-         
+    private void handleSignupAction()  throws IOException{
+        
+          FXMLLoader loader=new FXMLLoader(getClass().getResource("SignupPage.fxml"));
+        Parent root = loader.load();
+        SignupController mpc=loader.getController();
+        mpc.setStage(stage);
+        Scene scene=new Scene(root);
+        mpc.setStage(stage);
+        scene.getStylesheets().add(getClass().getResource("signup.css").toExternalForm());
+        stage.setTitle("signup");
+        stage.setScene(scene);
+        stage.show();
+          
         // Logic to switch to signup page
     }
 

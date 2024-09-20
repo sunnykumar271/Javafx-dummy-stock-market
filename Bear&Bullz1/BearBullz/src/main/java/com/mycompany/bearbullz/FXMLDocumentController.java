@@ -26,6 +26,10 @@ public class FXMLDocumentController implements Initializable {
      public void setStage(Stage s){
         this.stage=s;
      }
+     String gmail;
+     public void getEmail(String gmail){
+        this.gmail=gmail;
+     }
 
      @FXML
     private RadioButton btnFemale;
@@ -53,7 +57,9 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void OnNext() throws IOException{
-        
+        String Name = tfName.getText();
+        String Age = tfAge.getText();
+        String confirmPassword = confirmPasswordField.getText();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Mainpanel.fxml"));
         Parent root = loader.load();
         mainpanelcontroller mpc = loader.getController();
@@ -75,5 +81,9 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    void getEmail(String email) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
