@@ -9,3 +9,4 @@ com\mycompany\bearbullz\mainpanel.class
 com\mycompany\bearbullz\SignupController.class
 com\mycompany\bearbullz\LogInSignUpController.class
 com\mycompany\bearbullz\FXMLDocumentController.class
+com\mycompany\bearbullz\SignUpDB.class

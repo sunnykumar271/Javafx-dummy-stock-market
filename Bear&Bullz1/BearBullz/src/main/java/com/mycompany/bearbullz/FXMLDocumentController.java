@@ -51,6 +51,9 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextField tfAge;
+    
+    @FXML
+    private TextField tfprn;
 
     @FXML
     private TextField tfName;
@@ -59,7 +62,9 @@ public class FXMLDocumentController implements Initializable {
     private void OnNext() throws IOException{
         String Name = tfName.getText();
         String Age = tfAge.getText();
-        String confirmPassword = confirmPasswordField.getText();
+        String prn = tfprn.getText();
+        String bio = taBio.getText();
+        SignUpDB.UserDetail(gmail,Name,Age,prn,bio);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Mainpanel.fxml"));
         Parent root = loader.load();
         mainpanelcontroller mpc = loader.getController();
@@ -74,6 +79,7 @@ public class FXMLDocumentController implements Initializable {
         stage.show();
         
         
+        
     }
 
     
@@ -82,8 +88,6 @@ public class FXMLDocumentController implements Initializable {
         // TODO
     }    
 
-    void getEmail(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+  
     
 }
