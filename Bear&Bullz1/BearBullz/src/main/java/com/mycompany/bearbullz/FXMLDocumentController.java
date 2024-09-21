@@ -3,6 +3,7 @@ package com.mycompany.bearbullz;
 import java.io.IOException;
 import java.awt.event.MouseEvent;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -64,7 +65,14 @@ public class FXMLDocumentController implements Initializable {
         String Age = tfAge.getText();
         String prn = tfprn.getText();
         String bio = taBio.getText();
-        SignUpDB.UserDetail(gmail,Name,Age,prn,bio);
+        HashMap<String,Object> Data=new HashMap();
+        Data.put("NAME", Name);
+        Data.put("AGE", Age);
+        Data.put("PRN",prn);
+        Data.put("BIO", bio);
+
+        if(SignUpDB.updateUser(gmail, Data))
+        {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Mainpanel.fxml"));
         Parent root = loader.load();
         mainpanelcontroller mpc = loader.getController();
@@ -72,12 +80,14 @@ public class FXMLDocumentController implements Initializable {
         mpc.setStage(stage);
         Scene scene = new Scene(root);
         mpc.setStage(stage);
+        mpc.setName(Name);
+        mpc.setGmail(gmail);
         scene.getStylesheets().add(getClass().getResource("mainpanel.css").toExternalForm());
         stage.setTitle("Dashboard");
         stage.setScene(scene);
         stage.setFullScreen(true);
         stage.show();
-        
+        }
         
         
     }

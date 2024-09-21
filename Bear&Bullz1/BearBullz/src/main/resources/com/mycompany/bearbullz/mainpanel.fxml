@@ -18,7 +18,7 @@
                   <Image url="@logo.jpg" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" prefHeight="59.0" prefWidth="200.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Full Name" textAlignment="CENTER" />
+            <Label fx:id="fullName" alignment="CENTER" prefHeight="59.0" prefWidth="200.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Full Name" textAlignment="CENTER" />
             <Button mnemonicParsing="false" onAction="#home" prefHeight="59.0" prefWidth="200.0" text="Home" />
             <Button mnemonicParsing="false" onAction="#portfolio" prefHeight="59.0" prefWidth="200.0" text="Portfolio" />
             <Button mnemonicParsing="false" onAction="#leaderboards" prefHeight="59.0" prefWidth="200.0" text="LeaderBoards" />

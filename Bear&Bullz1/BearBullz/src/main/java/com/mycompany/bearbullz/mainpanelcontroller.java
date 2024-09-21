@@ -7,12 +7,14 @@ package com.mycompany.bearbullz;
 import java.io.IOException;
 import java.util.Optional;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -21,11 +23,20 @@ import javafx.stage.Stage;
  */
 public class mainpanelcontroller {
    Stage stage;
-  
-    
+   String Gmail;
+   @FXML
+   Label fullName;  
     // Assign the stage after FXMLLoader loads the controller
     public void setStage(Stage s) {
         this.stage = s;
+    }
+    public void setGmail(String Gmail)
+    {this.Gmail=Gmail;
+    }
+    @FXML
+    public void setName(String Name)
+    {
+        fullName.setText(Name);
     }
     public void home(ActionEvent e)
     {

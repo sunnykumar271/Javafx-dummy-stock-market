@@ -11,6 +11,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Updates;
 /**
  *
  * @author mayur
@@ -19,60 +20,50 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SignUpDB {
+      public static void main(String[] args) {
+        // Example usage
+        HashMap<String, Object> updates = new HashMap<>();
+        updates.put("BIO", "i bomb stuff");
+        updates.put("AGE", "99");
+
+        updateUser("Osamabin", updates);
+        System.out.println("User updated successfully.");
+    }
    
-    
-    public static void UserDetail(String gmail, String name,String prn,String age, String bio ) {
+    public static boolean updateUser(String email, HashMap<String, Object> updates) {
+        // Connect to MongoDB Atlas (replace <connection_string> with your actual connection string)
+        MongoClient mongoClient = MongoClients.create("mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/");
+        MongoDatabase database = mongoClient.getDatabase("BEARBULLZ");
+        MongoCollection<Document> collection = database.getCollection("USERS");
 
-        // Replace the placeholder with your MongoDB deployment's connection string
-        String uri = "mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/";
+        // Build the update fields from the HashMap
+        for (Map.Entry<String, Object> entry : updates.entrySet()) {
+            collection.updateOne(eq("GMAIL", email), Updates.set(entry.getKey(), entry.getValue()));
+        }
 
-         // Create a MongoClient instance
-        try (MongoClient mongoClient = MongoClients.create(uri)) {
-            // Connect to the database
-            MongoDatabase database = mongoClient.getDatabase("BEARBULLZ"); // Replace with your database name
-
-            // Access the collection
-            MongoCollection<Document> collection = database.getCollection("USERS"); // Replace with your collection name
-
-            // Check for a document
-            Document query = new Document("GMAIL",gmail);
-            Document existingDocument = collection.find(query).first();
-            
-            Map<String, Object> dataMap = new HashMap<>();
-             dataMap.put("name", name);
-             dataMap.put("prn", prn);
-            dataMap.put("age", age);
-             dataMap.put("bio", bio);
-             Document document = new Document(dataMap);
-             collection.insertOne(document);
-
-            if (existingDocument != null) {
-                System.out.println("Document found: " + existingDocument.toJson());
-                 
+        // Close the MongoClient connection
+        mongoClient.close();
+        return true;
+    }
+     public static String getNameByEmail(String email) {
+        // Connect to MongoDB Atlas (replace <connection_string> with your actual connection string)
+         MongoClient mongoClient = MongoClients.create("mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/");
+        MongoDatabase database = mongoClient.getDatabase("BEARBULLZ");
+        MongoCollection<Document> collection = database.getCollection("USERS");
 
 
-                // Update the document
-                //Document update = new Document("$set", new Document("age", 31));
-                //collection.updateOne(query, update);
-                System.out.println("Document updated successfully!");
-            } else {
-                System.out.println("Document not found. Adding new document...");
-                Document newDocument = null;
+        // Find the document by GMAIL
+        Document userDoc = collection.find(eq("GMAIL", email)).first();
 
-                // Insert a new document
-                //Document newDocument = new Document("GMAIL", gmail)
-                //.append("PASSWORD", password);
-                //collection.insertOne(newDocument);
-                //<<< HE
-                //<<<<=======
-            //    Document newDocument = new Document("GMAIL", gmail)
-            //            .append("PASSWORD", password);
-                collection.insertOne(newDocument);
-//>>>>>>> ced7ddf7dd8bd0363771ecbc4dbf442088d66696
-                System.out.println("New document inserted successfully!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        mongoClient.close();
+
+        // Return the value of the NAME field if document exists, otherwise null
+        if (userDoc != null) {
+            return userDoc.getString("NAME");
+        } else {
+            return null;  // User not found
+
         }
     }
     
