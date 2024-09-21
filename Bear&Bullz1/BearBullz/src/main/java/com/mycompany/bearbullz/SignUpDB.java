@@ -55,7 +55,7 @@ public class SignUpDB {
         // Find the document by GMAIL
         Document userDoc = collection.find(eq("GMAIL", email)).first();
 
-        // Close the connection
+
         mongoClient.close();
 
         // Return the value of the NAME field if document exists, otherwise null
@@ -63,6 +63,7 @@ public class SignUpDB {
             return userDoc.getString("NAME");
         } else {
             return null;  // User not found
+
         }
     }
     

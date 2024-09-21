@@ -5,15 +5,15 @@
 
 /* Style for all Labels */
 Label {
-    -fx-text-fill: #333333; /* Darker text color */
+    -fx-text-fill: yellow; /* Yellow text color */
     -fx-font-family: 'Arial Black'; /* Consistent font */
-    -fx-font-size: 12px;
+    -fx-font-size: 18px; /* Increased text size */
 }
 
 /* Style for TextFields */
 TextField {
-    -fx-pref-height: 30px;
-    -fx-pref-width: 510px;
+    -fx-pref-height: 22px; /* Smaller text fields */
+    -fx-pref-width: 400px; /* Adjusted width */
     -fx-background-radius: 5;
     -fx-border-color: #cccccc;
     -fx-border-radius: 5;
@@ -31,7 +31,7 @@ TextField:focused {
     -fx-background-color: #ffffff;
 }
 
-/* Style for the TextArea */
+/* Style for the TextArea (Bio Box) */
 TextArea {
     -fx-background-radius: 5;
     -fx-border-radius: 5;
@@ -55,16 +55,16 @@ TextArea:focused {
 /* Style for RadioButton */
 RadioButton {
     -fx-font-family: 'Arial';
-    -fx-font-size: 12px;
-    -fx-text-fill: #333333;
+    -fx-font-size: 18px; /* Increased text size */
+    -fx-text-fill: yellow; /* Yellow text color */
     -fx-padding: 0 10 0 0;
 }
 
 /* Style for the "Next" Button */
 Button {
     -fx-background-color: #007bff; /* Blue background */
-    -fx-text-fill: #ffffff; /* White text */
-    -fx-font-size: 14px;
+    -fx-text-fill: yellow; /* Yellow text color */
+    -fx-font-size: 18px; /* Increased text size */
     -fx-font-family: 'Arial Black';
     -fx-background-radius: 5;
     -fx-pref-width: 100px;
@@ -82,4 +82,3 @@ Button:disabled {
     -fx-background-color: #cccccc; /* Gray background */
     -fx-text-fill: #666666; /* Light gray text */
 }
-
