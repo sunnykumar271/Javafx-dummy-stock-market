@@ -57,17 +57,18 @@ public class SignUpDB {
                 System.out.println("Document updated successfully!");
             } else {
                 System.out.println("Document not found. Adding new document...");
+                Document newDocument = null;
 
                 // Insert a new document
-<<<<<<< HEAD
                 //Document newDocument = new Document("GMAIL", gmail)
-                        //.append("PASSWORD", password);
+                //.append("PASSWORD", password);
                 //collection.insertOne(newDocument);
-=======
+                //<<< HE
+                //<<<<=======
             //    Document newDocument = new Document("GMAIL", gmail)
             //            .append("PASSWORD", password);
                 collection.insertOne(newDocument);
->>>>>>> ced7ddf7dd8bd0363771ecbc4dbf442088d66696
+//>>>>>>> ced7ddf7dd8bd0363771ecbc4dbf442088d66696
                 System.out.println("New document inserted successfully!");
             }
         } catch (Exception e) {
