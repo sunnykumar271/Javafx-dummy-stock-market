@@ -31,7 +31,7 @@ public class LogInSignUpController {
         } else {
             // Logic for login action can go here
 //            //showAlert("Success", "Login successful for email: " + email);
-if(QuickStart.validateUser(email, password))
+if(UserAuthDB.validateUser(email, password))
 { FXMLLoader loader=new FXMLLoader(getClass().getResource("mainpanel.fxml"));
         Parent root = loader.load();
         mainpanelcontroller mpc=loader.getController();
@@ -39,7 +39,7 @@ if(QuickStart.validateUser(email, password))
         mpc.setGmail(email);
         Scene scene=new Scene(root);
         mpc.setStage(stage);
-        mpc.setName(SignUpDB.getNameByEmail(email));
+        mpc.setName(UsersDB.getNameByEmail(email));
         scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());
         stage.setTitle("Dashboard");
         stage.setScene(scene);

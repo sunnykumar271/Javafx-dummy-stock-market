@@ -37,7 +37,7 @@ public class SignupController {
 
         if (password.equals(confirmPassword)) {
             // Handle successful signup (e.g., save user to database)
-            if(QuickStart.addUser(email, password))
+            if(UserAuthDB.addUser(email, password))
             {System.out.println("Signup successful with email: " + email);
              FXMLLoader loader=new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
              Parent root = loader.load();

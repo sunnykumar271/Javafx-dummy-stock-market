@@ -70,8 +70,10 @@ public class FXMLDocumentController implements Initializable {
         Data.put("AGE", Age);
         Data.put("PRN",prn);
         Data.put("BIO", bio);
+        int StartingCredits =50000;
+        Data.put("BALANCE", StartingCredits);
 
-        if(SignUpDB.updateUser(gmail, Data))
+        if(UsersDB.updateUser(gmail, Data))
         {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Mainpanel.fxml"));
         Parent root = loader.load();
