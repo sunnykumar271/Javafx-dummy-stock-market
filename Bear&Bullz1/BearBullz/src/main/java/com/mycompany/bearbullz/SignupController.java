@@ -37,8 +37,8 @@ public class SignupController {
 
         if (password.equals(confirmPassword)) {
             // Handle successful signup (e.g., save user to database)
-            System.out.println("Signup successful with email: " + email);
-            QuickStart.addUser(email, password);
+            if(QuickStart.addUser(email, password))
+            {System.out.println("Signup successful with email: " + email);
              FXMLLoader loader=new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
              Parent root = loader.load();
              FXMLDocumentController mpc=loader.getController();
@@ -49,7 +49,7 @@ public class SignupController {
              scene.getStylesheets().add(getClass().getResource("signup2.css").toExternalForm());
              stage.setTitle("SignUp");
              stage.setScene(scene);
-            stage.show();
+            stage.show();}
         } else {
             // Handle password mismatch
             System.out.println("Passwords do not match.");

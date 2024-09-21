@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 com\mycompany\bearbullz\QuickStart.class
 com\mycompany\bearbullz\SignupPage.class
 com\mycompany\bearbullz\JavaFXPage.class
@@ -11,5 +10,3 @@ com\mycompany\bearbullz\SignupController.class
 com\mycompany\bearbullz\LogInSignUpController.class
 com\mycompany\bearbullz\FXMLDocumentController.class
 com\mycompany\bearbullz\SignUpDB.class
-=======
->>>>>>> ced7ddf7dd8bd0363771ecbc4dbf442088d66696
