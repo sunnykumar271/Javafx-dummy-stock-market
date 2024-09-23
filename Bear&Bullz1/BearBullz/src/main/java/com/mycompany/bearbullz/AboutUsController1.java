@@ -10,6 +10,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class AboutUsController1 {
 
@@ -118,6 +119,10 @@ public class AboutUsController1 {
     void openLink5(ActionEvent event) throws URISyntaxException, IOException{
            System.out.println("Linked Clicked !");
            Desktop.getDesktop().browse(new URI("https://www.instagram.com/s4i3al_mimo14?igsh=MWtieXJ1M3VxdmplaQ%3D%3D&utm_source=qr"));
+    }
+
+    void setStage(Stage stage) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
