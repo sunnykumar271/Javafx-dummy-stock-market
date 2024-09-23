@@ -5,48 +5,80 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bearbullz.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="483.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bearbullz.FXMLDocumentController">
     <children>
-        <Label fx:id="label" layoutX="21.0" layoutY="32.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="506.0" />
-      <Label layoutX="21.0" layoutY="14.0" text="Name:">
+      <ImageView fitHeight="560.0" fitWidth="570.0" layoutY="-48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.jpg" />
+         </image>
+      </ImageView>
+      
+      <!-- Updated Label with yellow text color -->
+      <Label fx:id="label" layoutX="21.0" layoutY="32.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="506.0" />
+      
+      <!-- Updated Name Label -->
+      <Label layoutX="21.0" layoutY="36.0" text="Name:" textFill="yellow">
          <font>
-            <Font name="Arial Black" size="12.0" />
+            <Font name="Arial Black" size="18.0" /> <!-- Increased font size -->
          </font>
       </Label>
-      <TextField fx:id="tfName" layoutX="21.0" layoutY="37.0" prefHeight="26.0" prefWidth="506.0" />
-      <Label layoutX="21.0" layoutY="67.0" text="PRN:">
+      
+      <!-- Updated TextField for Name (smaller) -->
+      <TextField fx:id="tfName" layoutX="111.0" layoutY="37.0" prefHeight="22.0" prefWidth="400.0" /> <!-- Adjusted size -->
+      
+      <!-- Updated PRN Label -->
+      <Label layoutX="23.0" layoutY="87.0" text="PRN:" textFill="yellow">
          <font>
-            <Font name="Arial Black" size="12.0" />
+            <Font name="Arial Black" size="18.0" /> <!-- Increased font size -->
          </font>
       </Label>
-      <TextField layoutX="21.0" layoutY="85.0" prefHeight="26.0" prefWidth="506.0" />
-      <Label layoutX="23.0" layoutY="122.0" text="Age:">
+      
+      <!-- Updated TextField for PRN (smaller) -->
+      <TextField fx:id="tfprn" layoutX="111.0" layoutY="88.0" prefHeight="22.0" prefWidth="400.0" /> <!-- Adjusted size -->
+      
+      <!-- Updated Age Label -->
+      <Label layoutX="25.0" layoutY="149.0" text="Age:" textFill="yellow">
          <font>
-            <Font name="Arial Black" size="12.0" />
+            <Font name="Arial Black" size="18.0" /> <!-- Increased font size -->
          </font>
       </Label>
-      <TextField fx:id="tfAge" layoutX="23.0" layoutY="140.0" />
-      <Label layoutX="28.0" layoutY="182.0" text="Gender:">
+      
+      <!-- Updated TextField for Age (smaller) -->
+      <TextField fx:id="tfAge" layoutX="117.0" layoutY="149.0" prefHeight="22.0" prefWidth="200.0" /> <!-- Adjusted size -->
+      
+      <!-- Updated Gender Label -->
+      <Label layoutX="23.0" layoutY="204.0" text="Gender:" textFill="yellow">
          <font>
-            <Font name="Arial Black" size="12.0" />
+            <Font name="Arial Black" size="18.0" /> <!-- Increased font size -->
          </font>
       </Label>
-      <RadioButton fx:id="btnMaleclicked" layoutX="86.0" layoutY="182.0" mnemonicParsing="false" text="Male" />
-      <RadioButton fx:id="btnFemale" layoutX="149.0" layoutY="182.0" mnemonicParsing="false" text="Female" />
-      <RadioButton fx:id="btnOthers" layoutX="217.0" layoutY="182.0" mnemonicParsing="false" text="Others" />
-      <Label layoutX="28.0" layoutY="215.0" text="Bio:">
+      
+      <!-- Updated RadioButtons for Gender -->
+      <RadioButton fx:id="btnMaleclicked" layoutX="138.0" layoutY="209.0" mnemonicParsing="false" text="Male" textFill="yellow" />
+      <RadioButton fx:id="btnFemale" layoutX="229.0" layoutY="209.0" mnemonicParsing="false" text="Female" textFill="yellow" />
+      <RadioButton fx:id="btnOthers" layoutX="326.0" layoutY="209.0" mnemonicParsing="false" text="Others" textFill="yellow" />
+      
+      <!-- Updated Bio Label -->
+      <Label layoutX="23.0" layoutY="256.0" prefHeight="26.0" prefWidth="58.0" text="Bio:" textFill="yellow">
          <font>
-            <Font name="Arial Black" size="12.0" />
+            <Font name="Arial Black" size="18.0" /> <!-- Increased font size -->
          </font>
       </Label>
-      <TextArea fx:id="taBio" layoutX="63.0" layoutY="215.0" prefHeight="146.0" prefWidth="465.0" />
-      <Button onAction="#OnNext" fx:id="btnNextClicked" layoutX="244.0" layoutY="391.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="Next">
+      
+      <!-- Updated TextArea for Bio (larger) -->
+      <TextArea fx:id="taBio" layoutX="65.0" layoutY="285.0" prefHeight="172.0" prefWidth="430.0" /> <!-- Enlarged -->
+      
+      <!-- Updated Next Button -->
+      <Button fx:id="btnNextClicked" layoutX="237.0" layoutY="464.0" mnemonicParsing="false" onAction="#OnNext" prefHeight="26.0" prefWidth="74.0" text="Next" textFill="yellow">
          <font>
-            <Font name="Arial Black" size="12.0" />
+            <Font name="Arial Black" size="18.0" /> <!-- Increased font size -->
          </font>
       </Button>
+      
     </children>
 </AnchorPane>

@@ -1,1 +1,86 @@
-mayur this side. 
+/* Style the root AnchorPane */
+#AnchorPane {
+    -fx-background-color: #f4f4f4; /* Light background for the whole form */
+}
+
+/* Style for all Labels */
+Label {
+    -fx-text-fill: #333333; /* Darker text color */
+    -fx-font-family: 'Arial Black'; /* Consistent font */
+    -fx-font-size: 12px;
+}
+
+/* Style for TextFields */
+TextField {
+    -fx-pref-height: 30px;
+    -fx-pref-width: 510px;
+    -fx-background-radius: 5;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 5 10 5 10; /* Inner padding */
+}
+
+/* Hover effect for TextFields */
+TextField:hover {
+    -fx-border-color: #007bff; /* Blue border on hover */
+}
+
+/* Focused TextField (when clicked) */
+TextField:focused {
+    -fx-border-color: #007bff; /* Blue border when focused */
+    -fx-background-color: #ffffff;
+}
+
+/* Style for the TextArea */
+TextArea {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #cccccc;
+    -fx-padding: 10;
+    -fx-font-family: 'Arial';
+    -fx-font-size: 12px;
+}
+
+/* Hover effect for TextArea */
+TextArea:hover {
+    -fx-border-color: #007bff; /* Blue border on hover */
+}
+
+/* Focused TextArea (when clicked) */
+TextArea:focused {
+    -fx-border-color: #007bff; /* Blue border when focused */
+    -fx-background-color: #ffffff;
+}
+
+/* Style for RadioButton */
+RadioButton {
+    -fx-font-family: 'Arial';
+    -fx-font-size: 12px;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 10 0 0;
+}
+
+/* Style for the "Next" Button */
+Button {
+    -fx-background-color: #007bff; /* Blue background */
+    -fx-text-fill: #ffffff; /* White text */
+    -fx-font-size: 14px;
+    -fx-font-family: 'Arial Black';
+    -fx-background-radius: 5;
+    -fx-pref-width: 100px;
+    -fx-pref-height: 30px;
+    -fx-cursor: hand; /* Show hand cursor */
+}
+
+/* Hover effect for Button */
+Button:hover {
+    -fx-background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for disabled buttons */
+Button:disabled {
+    -fx-background-color: #cccccc; /* Gray background */
+    -fx-text-fill: #666666; /* Light gray text */
+}
+
+ 

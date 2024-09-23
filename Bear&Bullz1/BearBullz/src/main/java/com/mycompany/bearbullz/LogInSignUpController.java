@@ -31,25 +31,41 @@ public class LogInSignUpController {
         } else {
             // Logic for login action can go here
 //            //showAlert("Success", "Login successful for email: " + email);
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("mainpanel.fxml"));
+if(UserAuthDB.validateUser(email, password))
+{ FXMLLoader loader=new FXMLLoader(getClass().getResource("mainpanel.fxml"));
         Parent root = loader.load();
         mainpanelcontroller mpc=loader.getController();
         mpc.setStage(stage);
+        mpc.setGmail(email);
         Scene scene=new Scene(root);
         mpc.setStage(stage);
+        mpc.setName(UsersDB.getNameByEmail(email));
         scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());
         stage.setTitle("Dashboard");
         stage.setScene(scene);
         stage.setFullScreen(true);
-        stage.show();
-          
+        stage.show();}
+          else
+{
+    showAlert("Error", "Wrong Info");
+}
         }
     }
 
     @FXML
-    private void handleSignupAction()  {
-        showAlert("Signup", "Redirecting to signup page...");
-         
+    private void handleSignupAction()  throws IOException{
+        
+          FXMLLoader loader=new FXMLLoader(getClass().getResource("SignupPage.fxml"));
+        Parent root = loader.load();
+        SignupController mpc=loader.getController();
+        mpc.setStage(stage);
+        Scene scene=new Scene(root);
+        mpc.setStage(stage);
+        scene.getStylesheets().add(getClass().getResource("signup.css").toExternalForm());
+        stage.setTitle("signup");
+        stage.setScene(scene);
+        stage.show();
+          
         // Logic to switch to signup page
     }
 

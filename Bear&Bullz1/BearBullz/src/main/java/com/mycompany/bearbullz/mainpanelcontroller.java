@@ -7,12 +7,17 @@ package com.mycompany.bearbullz;
 import java.io.IOException;
 import java.util.Optional;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 /**
@@ -21,11 +26,23 @@ import javafx.stage.Stage;
  */
 public class mainpanelcontroller {
    Stage stage;
-  
-    
+   String Gmail;
+   @FXML
+   Label fullName;
+   @FXML
+   BorderPane Canvas;
+   
     // Assign the stage after FXMLLoader loads the controller
     public void setStage(Stage s) {
         this.stage = s;
+    }
+    public void setGmail(String Gmail)
+    {this.Gmail=Gmail;
+    }
+    @FXML
+    public void setName(String Name)
+    {
+        fullName.setText(Name);
     }
     public void home(ActionEvent e)
     {
@@ -52,11 +69,26 @@ public class mainpanelcontroller {
         System.out.println("Home");
         
     }
-    public void donate(ActionEvent e)
-    {
-        System.out.println("Home");
+   public void donate(ActionEvent e) throws IOException {
+    System.out.println("Home");
+
+    // Load the new FXML file
+    Parent root = FXMLLoader.load(getClass().getResource("donation.fxml"));
+     // Ensure the loaded root can be resized by casting it to a Region
+    if (root instanceof Region) {
+        Region region = (Region) root;
         
+        // Adjust the size of root to match the current window's size
+        // Optionally, bind to the Canvas's size to make it responsive to resizing
+        region.prefWidthProperty().bind(Canvas.widthProperty());
+        region.prefHeightProperty().bind(Canvas.heightProperty());
     }
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+
+    
+}
+
     public void logout(ActionEvent e) throws IOException
     {
                 // Create a confirmation alert
