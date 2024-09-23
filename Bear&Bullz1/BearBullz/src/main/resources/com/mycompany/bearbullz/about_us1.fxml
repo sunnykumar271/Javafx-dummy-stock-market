@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane gridLinesVisible="true" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="666.0" vgap="10.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bearbullz.AboutUsController1">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <ImageView fx:id="sunnyImage" fitHeight="88.0" fitWidth="138.0" pickOnBounds="true">
+               <image>
+                  <Image url="@image%202.jpeg" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="sunnyName" prefHeight="29.0" prefWidth="117.0" text="Sunny Kushwaha" textFill="#f60303" wrapText="true">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="sunnyBio" editable="false" prefHeight="44.0" prefWidth="328.0" scaleShape="false" text="Investment Insider passionate about empowering informed decisions" wrapText="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="12.0" />
+               </font>
+            </TextArea>
+            <Hyperlink fx:id="sunnyLink" onAction="#openLink" text="Sunny Insta Id" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Hyperlink>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+         <children>
+            <ImageView fx:id="anshuImage" fitHeight="88.0" fitWidth="138.0" pickOnBounds="true">
+               <image>
+                  <Image url="@image%203.jpeg" />
+               </image>
+               <VBox.margin>
+                  <Insets top="-0.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="anshuName" text="Anshuman Singh" textFill="#f60303">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="anshuBio" editable="false" prefHeight="44.0" prefWidth="328.0" scaleShape="false" text="If Creator of NetBeans values his life,he should stay away from me" wrapText="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextArea>
+            <Hyperlink fx:id="anshuLink" onAction="#openLink1" text="Anshuman Insta Id" wrapText="true" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+         <children>
+            <ImageView fx:id="mayurImage" fitHeight="88.0" fitWidth="138.0" pickOnBounds="true">
+               <image>
+                  <Image url="@bmacoffee.png" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="mayurName" prefHeight="29.0" prefWidth="117.0" text="Mayur Kitchloo" textFill="#f60303" wrapText="true">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="mayurBio" editable="false" prefHeight="44.0" prefWidth="328.0" scaleShape="false" text="When the summer dies, I'll be there!" wrapText="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="12.0" />
+               </font>
+            </TextArea>
+            <Hyperlink fx:id="mayurInsta" onAction="#openLink2" text="Mayur Insta Id" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Hyperlink>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="223.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <ImageView fx:id="sathakImage" fitHeight="88.0" fitWidth="138.0" pickOnBounds="true">
+               <image>
+                  <Image url="@qr.jpeg" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="sarthakName" prefHeight="29.0" prefWidth="167.0" text="Sarthak Sooryanvanshi" textFill="#f60303" wrapText="true">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="sathakBio" editable="false" prefHeight="44.0" prefWidth="328.0" scaleShape="false" text=" Either be happy or be an Engineer" wrapText="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="12.0" />
+               </font>
+            </TextArea>
+            <Hyperlink fx:id="SathakInsta" onAction="#openLink3" text="Sarthak Insta Id" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Hyperlink>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+         <children>
+            <ImageView fx:id="umangImage" fitHeight="88.0" fitWidth="138.0" pickOnBounds="true">
+               <image>
+                  <Image url="@logo.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="umangName" prefHeight="29.0" prefWidth="117.0" text="Umang Bisen" textFill="#f60303" wrapText="true">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="umangBio" editable="false" prefHeight="44.0" prefWidth="328.0" scaleShape="false" text="Building the app that’s smarter than your portfolio." wrapText="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="12.0" />
+               </font>
+            </TextArea>
+            <Hyperlink fx:id="umangLink" onAction="#openLink4" text="Umang Insta Id" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Hyperlink>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <ImageView fx:id="saibalImage" fitHeight="88.0" fitWidth="138.0" pickOnBounds="true">
+               <image>
+                  <Image url="@logo.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="saibalName" prefHeight="29.0" prefWidth="117.0" text="Saibal Sarkar" textFill="#f60303" wrapText="true">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="saibalBio" editable="false" prefHeight="44.0" prefWidth="328.0" scaleShape="false" text="A madridista.Fluent in silence" wrapText="true">
+               <font>
+                  <Font name="Arial Bold Italic" size="12.0" />
+               </font>
+            </TextArea>
+            <Hyperlink fx:id="saibalInsta" onAction="#openLink5" text="Saibal Insta Id" wrapText="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Hyperlink>
+         </children>
+      </VBox>
+   </children>
+</GridPane>
