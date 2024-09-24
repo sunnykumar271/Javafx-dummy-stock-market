@@ -4,18 +4,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="600" prefWidth="700" style="-fx-background-color: #ECF0F1;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bearbullz.leaderboardController">
-   <AnchorPane layoutX="1.0" layoutY="18.0" prefHeight="600.0" prefWidth="700.0">
-      <children>
-           <!-- Dynamically generated user cards will be displayed here -->
-           
-              <!-- Title Label -->
-           <Label prefHeight="17.0" prefWidth="701.0" styleClass="leaderboard-title" text="Leaderboard" textAlignment="CENTER" />
-      </children>
-   </AnchorPane>
-   <AnchorPane layoutX="50.0" layoutY="50.0">
-      <children>
-          <VBox fx:id="leaderboardContainer" prefWidth="600" spacing="20" />
-      </children>
-   </AnchorPane>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.bearbullz.leaderboardController" prefWidth="700" prefHeight="600" style="-fx-background-color: #D6EAF8;"> <!-- Light blue background -->
+    <VBox fx:id="leaderboardContainer" layoutX="50.0" layoutY="50.0" prefWidth="600" spacing="20">
+        <!-- Title Label -->
+        <Label text="Leaderboard" styleClass="leaderboard-title"/>
+    </VBox>
 </AnchorPane>
