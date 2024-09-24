@@ -22,8 +22,8 @@ public class leaderboardController {
 
     public void initialize() {
         // Fetching data from MongoDB
-         ArrayList<HashMap<String, Object>> users = UsersDB.getAllUsersSortedByBalance();
-        int i=1;
+        ArrayList<HashMap<String, Object>> users = UsersDB.getAllUsersSortedByBalance();
+        int i = 1;
         // Creating UI elements for each user
         for (HashMap a : users) {
             HBox userCard = createUserCard(a.get("NAME").toString(),
@@ -37,24 +37,18 @@ public class leaderboardController {
         HBox card = new HBox();
         card.getStyleClass().add("user-card");
 
-        Label usernameLabel = new Label(username);
-        usernameLabel.getStyleClass().add("username");
-
+        // Add the index number before the username
         Label indexLabel = new Label(String.valueOf(indexNumber));
         indexLabel.getStyleClass().add("index-number");
+
+        Label usernameLabel = new Label(username);
+        usernameLabel.getStyleClass().add("username");
 
         Label balanceLabel = new Label(balanceCoins + " coins");
         balanceLabel.getStyleClass().add("balance-coins");
 
-        card.getChildren().addAll(usernameLabel, indexLabel, balanceLabel);
+        // The order now places index before the username
+        card.getChildren().addAll(indexLabel, usernameLabel, balanceLabel);
         return card;
     }
-
-   /* private List<Document> fetchUsersFromDB() {
-        MongoClient mongoClient = new MongoClient("localhost", 27017);
-        MongoDatabase database = mongoClient.getDatabase("yourDatabaseName");
-        MongoCollection<Document> collection = database.getCollection("users");
-
-        return collection.find().into(new java.util.ArrayList<>());
-    }*/
 }
