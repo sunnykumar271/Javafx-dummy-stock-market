@@ -1,0 +1,21 @@
+/* Container styling */
+.user-card {
+    -fx-background-color: #F0F0F0;
+    -fx-padding: 10;
+    -fx-spacing: 20;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 2, 2);
+}
+
+.username {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.index-number, .balance-coins {
+    -fx-font-size: 14px;
+    -fx-text-fill: #666;
+}
