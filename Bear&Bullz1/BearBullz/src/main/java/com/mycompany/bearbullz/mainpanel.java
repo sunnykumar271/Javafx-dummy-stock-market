@@ -37,7 +37,6 @@ public class mainpanel extends Application {
         primaryStage.setScene(scene);
          scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());
          
-        primaryStage.setFullScreen(true);
         primaryStage.centerOnScreen();
         primaryStage.show();
     }

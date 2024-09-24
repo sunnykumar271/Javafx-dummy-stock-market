@@ -68,14 +68,7 @@ public class mainpanelcontroller {
     {
        FXMLLoader loader=new FXMLLoader(getClass().getResource("about_us1.fxml"));
         Parent root = loader.load();
-       /* AboutUsController1 mpc=loader.getController();
-        mpc.setStage(stage);
-        Scene scene = new Scene(root);
-        stage.setTitle("About Us");
-        stage.setScene(scene);
-
-        stage.show();
-        */
+      
         if (root instanceof Region) {
         Region region = (Region) root;
         

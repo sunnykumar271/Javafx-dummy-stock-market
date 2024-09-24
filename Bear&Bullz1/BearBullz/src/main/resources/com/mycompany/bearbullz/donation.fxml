@@ -4,17 +4,17 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <!-- Main Background ImageView -->
-      <ImageView layoutX="-7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="600.0" fitWidth="774.0" layoutX="-7.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-7.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@bmacoffee.png" />
          </image>
       </ImageView>
 
       <!-- QR Code ImageView -->
-      <ImageView fitHeight="185.0" fitWidth="182.0" layoutX="331.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="331.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="366.0">
+      <ImageView fitHeight="185.0" fitWidth="182.0" layoutX="329.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="329.0" AnchorPane.rightAnchor="279.1221008300781" AnchorPane.topAnchor="401.0">
          <image>
             <Image url="@qr.jpeg" />
          </image>

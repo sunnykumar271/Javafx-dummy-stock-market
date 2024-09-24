@@ -87,7 +87,6 @@ public class FXMLDocumentController implements Initializable {
         scene.getStylesheets().add(getClass().getResource("mainpanel.css").toExternalForm());
         stage.setTitle("Dashboard");
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();
         }
         

@@ -43,7 +43,6 @@ if(UserAuthDB.validateUser(email, password))
         scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());
         stage.setTitle("Dashboard");
         stage.setScene(scene);
-        stage.setFullScreen(true);
         stage.show();}
           else
 {

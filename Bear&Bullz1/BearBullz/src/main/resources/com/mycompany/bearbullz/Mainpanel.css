@@ -19,9 +19,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .button {
     -fx-background-color: linear-gradient(#3498db, #2980b9); /* Gradient for 3D look */
     -fx-text-fill: white; /* White text */
-    -fx-font-size: 16px; /* Font size */
+    -fx-font-size: 12px; /* Font size */
     -fx-font-weight: bold; /* Bold text */
-    -fx-padding: 10 20; /* Padding around text */
+    -fx-padding: 5 ; /* Padding around text */
     -fx-background-radius: 8; /* Rounded corners */
     -fx-border-color: #2980b9; /* Border for 3D look */
     -fx-border-width: 2px;
