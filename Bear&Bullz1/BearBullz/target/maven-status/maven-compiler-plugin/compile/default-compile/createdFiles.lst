@@ -3,6 +3,7 @@ com\mycompany\bearbullz\leaderboardController.class
 com\mycompany\bearbullz\JavaFXPage.class
 com\mycompany\bearbullz\UserAuthDB.class
 com\mycompany\bearbullz\donateus.class
+com\mycompany\bearbullz\AboutUsMain.class
 com\mycompany\bearbullz\mainpanelcontroller.class
 com\mycompany\bearbullz\StocksDB.class
 com\mycompany\bearbullz\LogInSignUp.class
@@ -11,5 +12,6 @@ com\mycompany\bearbullz\SignupController.class
 com\mongodb\MongoClient.class
 com\mycompany\bearbullz\leaderboard.class
 com\mycompany\bearbullz\LogInSignUpController.class
+com\mycompany\bearbullz\AboutUsController1.class
 com\mycompany\bearbullz\UsersDB.class
 com\mycompany\bearbullz\FXMLDocumentController.class

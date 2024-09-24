@@ -64,10 +64,31 @@ public class mainpanelcontroller {
         System.out.println("Home");
         
     }
-    public void aboutUs(ActionEvent e)
+    public void aboutUs(ActionEvent e) throws IOException
     {
-        System.out.println("Home");
+       FXMLLoader loader=new FXMLLoader(getClass().getResource("about_us1.fxml"));
+        Parent root = loader.load();
+       /* AboutUsController1 mpc=loader.getController();
+        mpc.setStage(stage);
+        Scene scene = new Scene(root);
+        stage.setTitle("About Us");
+        stage.setScene(scene);
+
+        stage.show();
+        */
+        if (root instanceof Region) {
+        Region region = (Region) root;
         
+        // Adjust the size of root to match the current window's size
+        // Optionally, bind to the Canvas's size to make it responsive to resizing
+        region.prefWidthProperty().bind(Canvas.widthProperty());
+        region.prefHeightProperty().bind(Canvas.heightProperty());
+    }
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
+        
+        
+       
     }
    public void donate(ActionEvent e) throws IOException {
     System.out.println("Home");
