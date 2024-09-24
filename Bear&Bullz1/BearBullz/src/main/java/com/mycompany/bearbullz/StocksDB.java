@@ -4,12 +4,16 @@
  */
 package com.mycompany.bearbullz;
 
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -23,7 +27,13 @@ public class StocksDB {
     
        public static void main(String[] args) {
      
-       
+       // Get sorted stock list by CHANGE_PERC
+    ArrayList<HashMap<String, Object>> sortedStocks = getStocksSortedByChangePerc();
+
+    // Print sorted stocks
+    for (HashMap<String, Object> stock : sortedStocks) {
+        System.out.println(stock);
+    }
        
     }
    
@@ -118,5 +128,40 @@ public static HashMap<String, Object> getStockByName(String name) {
     
     return stockMap;
 }
+public static ArrayList<HashMap<String, Object>> getStocksSortedByChangePerc() {
+    ArrayList<HashMap<String, Object>> stockList = new ArrayList<>();
 
+    // MongoDB Atlas connection string
+    String connectionString = "mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/";
+
+    // Create a MongoDB client and connect to the database
+    try (MongoClient mongoClient = MongoClients.create(connectionString)) {
+        MongoDatabase database = mongoClient.getDatabase("BEARBULLZ"); // Replace with your database name
+        MongoCollection<Document> collection = database.getCollection("STOCKS"); // Replace with your collection name
+
+        // Retrieve all stock documents
+        FindIterable<Document> stocks = collection.find();
+
+        // Convert each document into a HashMap and add to the list
+        for (Document stock : stocks) {
+            HashMap<String, Object> stockMap = new HashMap<>();
+            for (String key : stock.keySet()) {
+                stockMap.put(key, stock.get(key));
+            }
+            stockList.add(stockMap);
+        }
+
+        // Sort the list by CHANGE_PERC
+        Collections.sort(stockList, new Comparator<HashMap<String, Object>>() {
+            @Override
+            public int compare(HashMap<String, Object> o1, HashMap<String, Object> o2) {
+                double changePerc1 = (double) o1.get("CHANGE_PERC");
+                double changePerc2 = (double) o2.get("CHANGE_PERC");
+                return Double.compare(changePerc2, changePerc1); // Descending order
+            }
+        });
+    }
+
+    return stockList;
+}
 }

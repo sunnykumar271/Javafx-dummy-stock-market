@@ -44,9 +44,12 @@ public class mainpanelcontroller {
     {
         fullName.setText(Name);
     }
-    public void home(ActionEvent e)
+    public void home(ActionEvent e) throws IOException
     {
-        System.out.println("Home");
+        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+     
+    // Assuming Canvas is a BorderPane (or another Pane type)
+    Canvas.setCenter(root);
         
     }
     public void portfolio(ActionEvent e)
