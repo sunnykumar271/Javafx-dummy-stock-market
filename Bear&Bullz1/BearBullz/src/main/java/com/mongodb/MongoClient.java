@@ -6,7 +6,7 @@ package com.mongodb;
 
 /**
  *
- * @author mayur
+ * @author Anshu
  */
 public class MongoClient {
     
