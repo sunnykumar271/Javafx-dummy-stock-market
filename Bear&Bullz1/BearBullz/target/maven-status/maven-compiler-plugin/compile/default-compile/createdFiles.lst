@@ -1,3 +1,4 @@
+com\mycompany\bearbullz\StockPageController.class
 com\mycompany\bearbullz\SignupPage.class
 com\mycompany\bearbullz\leaderboardController.class
 com\mycompany\bearbullz\JavaFXPage.class
@@ -9,6 +10,7 @@ com\mycompany\bearbullz\mainpanelcontroller.class
 com\mycompany\bearbullz\StocksDB.class
 com\mycompany\bearbullz\LogInSignUp.class
 com\mycompany\bearbullz\mainpanel.class
+com\mycompany\bearbullz\StockPage.class
 com\mycompany\bearbullz\SignupController.class
 com\mongodb\MongoClient.class
 com\mycompany\bearbullz\leaderboard.class
