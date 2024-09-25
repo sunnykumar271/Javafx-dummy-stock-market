@@ -5,6 +5,7 @@
 package com.mycompany.bearbullz;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,12 +46,14 @@ public class mainpanelcontroller {
         fullName.setText(Name);
     }
     public void home(ActionEvent e) throws IOException
-    {
-        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-     
+    {FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+    
+     Parent root=loader.load();
+     HomePageController hpc = loader.getController();
+    
     // Assuming Canvas is a BorderPane (or another Pane type)
     Canvas.setCenter(root);
-        
+         Canvas.getStylesheets().add(getClass().getResource("leaderboard.css").toExternalForm());
     }
     public void portfolio(ActionEvent e)
     {
