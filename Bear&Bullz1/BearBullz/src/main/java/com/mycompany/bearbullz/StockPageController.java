@@ -39,16 +39,16 @@ public class StockPageController {
 
     public void initialize() {
         // Load sample stock data
-        loadSampleStockData();
+        
 
         // Set up Buy and Sell button actions
         buyButton.setOnAction(e -> handleBuyAction());
         sellButton.setOnAction(e -> handleSellAction());
     }
 
-    private void loadSampleStockData() {
+    public void loadSampleStockData(String Name) {
         // Sample stock data\
-        HashMap<String, Object>Stock= StocksDB.getStockByName("GOOGL");
+        HashMap<String, Object>Stock= StocksDB.getStockByName(Name);
         
         String sampleCompanyName =(String) Stock.get("NAME");
         double sampleStockRate = Double.parseDouble(Stock.get("VALUE5").toString());

@@ -5,14 +5,22 @@ package com.mycompany.bearbullz;
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
@@ -22,7 +30,7 @@ import javafx.scene.paint.Color;
  * @author Anshu
  */
 public class HomePageController  {
-
+   public BorderPane Canvas;
     /**
      * Initializes the controller class.
      */
@@ -66,10 +74,18 @@ public class HomePageController  {
         
         // The order now places index before the username
         card.getChildren().addAll(indexLabel, usernameLabel, balanceLabel,change1);
-        card.setOnMouseClicked(event -> {
-        // Your code for handling the click event
-        System.out.println("Card clicked: " + Name);
-        // You can also perform more complex actions here like navigating or updating data
+        card.setOnMouseClicked(event -> { FXMLLoader loader = new FXMLLoader(getClass().getResource("StockPage.fxml"));
+        Parent root;
+            try {
+                root = loader.load();
+                StockPageController mpc=loader.getController();
+                mpc.loadSampleStockData(Name);
+        Canvas.setCenter(root);
+        Canvas.getStylesheets().add(getClass().getResource("stockpage.css").toExternalForm());
+            } catch (IOException ex) {
+                Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
     });
         return card;
     }

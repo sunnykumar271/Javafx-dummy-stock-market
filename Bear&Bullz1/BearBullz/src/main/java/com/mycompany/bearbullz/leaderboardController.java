@@ -36,7 +36,7 @@ public class leaderboardController {
     private HBox createUserCard(String username, int indexNumber, int balanceCoins) {
         HBox card = new HBox();
         card.getStyleClass().add("user-card");
-
+        card.setPrefWidth(600);
         // Add the index number before the username
         Label indexLabel = new Label(String.valueOf(indexNumber));
         indexLabel.getStyleClass().add("index-number");

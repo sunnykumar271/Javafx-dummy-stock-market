@@ -32,6 +32,8 @@ public class mainpanelcontroller {
    Label fullName;
    @FXML
    BorderPane Canvas;
+   @FXML
+   Label Balance;
    
     // Assign the stage after FXMLLoader loads the controller
     public void setStage(Stage s) {
@@ -41,16 +43,17 @@ public class mainpanelcontroller {
     {this.Gmail=Gmail;
     }
     @FXML
-    public void setName(String Name)
+    public void setName(String Name,String Balance)
     {
         fullName.setText(Name);
+        this.Balance.setText(Balance);
     }
     public void home(ActionEvent e) throws IOException
     {FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
     
      Parent root=loader.load();
      HomePageController hpc = loader.getController();
-    
+    hpc.Canvas=Canvas;
     // Assuming Canvas is a BorderPane (or another Pane type)
     Canvas.setCenter(root);
          Canvas.getStylesheets().add(getClass().getResource("leaderboard.css").toExternalForm());

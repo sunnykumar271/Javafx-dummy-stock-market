@@ -27,13 +27,6 @@ public class StocksDB {
     
        public static void main(String[] args) {
      
-       // Get sorted stock list by CHANGE_PERC
-    ArrayList<HashMap<String, Object>> sortedStocks = getStocksSortedByChangePerc();
-
-    // Print sorted stocks
-    for (HashMap<String, Object> stock : sortedStocks) {
-        System.out.println(stock);
-    }
        
     }
    
