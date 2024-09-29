@@ -54,6 +54,8 @@ public class mainpanelcontroller {
      Parent root=loader.load();
      HomePageController hpc = loader.getController();
     hpc.Canvas=Canvas;
+    hpc.email=Gmail;
+    hpc.setStage(stage);
     // Assuming Canvas is a BorderPane (or another Pane type)
     Canvas.setCenter(root);
          Canvas.getStylesheets().add(getClass().getResource("leaderboard.css").toExternalForm());

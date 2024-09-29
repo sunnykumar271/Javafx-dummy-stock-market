@@ -23,6 +23,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -30,7 +31,14 @@ import javafx.scene.paint.Color;
  * @author Anshu
  */
 public class HomePageController  {
+    String email;
+    Stage stage;
+public void setStage(Stage stage)
+{
+    this.stage=stage;
+}
    public BorderPane Canvas;
+   public Stage PrimaryStage;
     /**
      * Initializes the controller class.
      */
@@ -80,6 +88,8 @@ public class HomePageController  {
                 root = loader.load();
                 StockPageController mpc=loader.getController();
                 mpc.loadSampleStockData(Name);
+                mpc.email=email;
+                mpc.setStage(stage);
         Canvas.setCenter(root);
         Canvas.getStylesheets().add(getClass().getResource("stockpage.css").toExternalForm());
             } catch (IOException ex) {

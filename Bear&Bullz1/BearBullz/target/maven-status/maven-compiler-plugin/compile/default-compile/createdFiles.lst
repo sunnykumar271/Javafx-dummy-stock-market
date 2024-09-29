@@ -13,9 +13,11 @@ com\mycompany\bearbullz\mainpanel.class
 com\mycompany\bearbullz\StockPage.class
 com\mycompany\bearbullz\SignupController.class
 com\mongodb\MongoClient.class
+com\mycompany\bearbullz\StockPurchaseController.class
 com\mycompany\bearbullz\leaderboard.class
 com\mycompany\bearbullz\LogInSignUpController.class
 com\mycompany\bearbullz\StocksDB$1.class
 com\mycompany\bearbullz\AboutUsController1.class
+com\mycompany\bearbullz\StockSellController.class
 com\mycompany\bearbullz\UsersDB.class
 com\mycompany\bearbullz\FXMLDocumentController.class
