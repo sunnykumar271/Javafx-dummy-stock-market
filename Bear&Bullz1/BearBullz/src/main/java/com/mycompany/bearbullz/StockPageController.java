@@ -81,20 +81,21 @@ public void setStage(Stage stage)
         // Set the company name and rate
         companyName.setText(sampleCompanyName);
         stockRate.setText("$" + sampleStockRate);
-
+        GraphUpdateThread graphUpdateThread = new GraphUpdateThread(sampleCompanyName, Stock, stockChart);
+graphUpdateThread.start();
         // Sample price history for the graph (Time, Price)
-        XYChart.Series<Number, Number> series = new XYChart.Series<>();
-        series.setName(sampleCompanyName);
-
-        // Add sample data points to the series
-        series.getData().add(new XYChart.Data<>(1,  Double.parseDouble(Stock.get("VALUE1").toString())));
-        series.getData().add(new XYChart.Data<>(2,  Double.parseDouble(Stock.get("VALUE2").toString())));
-        series.getData().add(new XYChart.Data<>(3,  Double.parseDouble(Stock.get("VALUE3").toString())));
-        series.getData().add(new XYChart.Data<>(4,  Double.parseDouble(Stock.get("VALUE4").toString())));
-         series.getData().add(new XYChart.Data<>(5,  Double.parseDouble(Stock.get("VALUE5").toString())));
-
-        // Add series to the stock chart
-        stockChart.getData().add(series);
+//        XYChart.Series<Number, Number> series = new XYChart.Series<>();
+//        series.setName(sampleCompanyName);
+//
+//        // Add sample data points to the series
+//        series.getData().add(new XYChart.Data<>(1,  Double.parseDouble(Stock.get("VALUE1").toString())));
+//        series.getData().add(new XYChart.Data<>(2,  Double.parseDouble(Stock.get("VALUE2").toString())));
+//        series.getData().add(new XYChart.Data<>(3,  Double.parseDouble(Stock.get("VALUE3").toString())));
+//        series.getData().add(new XYChart.Data<>(4,  Double.parseDouble(Stock.get("VALUE4").toString())));
+//         series.getData().add(new XYChart.Data<>(5,  Double.parseDouble(Stock.get("VALUE5").toString())));
+//
+//        // Add series to the stock chart
+//        stockChart.getData().add(series);
     }
 
     private void handleBuyAction() throws IOException {
@@ -148,6 +149,7 @@ public void setStage(Stage stage)
             stage.show();
     }
 }
+
 
     
 
