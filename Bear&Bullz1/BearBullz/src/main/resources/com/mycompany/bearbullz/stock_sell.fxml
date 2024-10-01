@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bearbullz.StockSellController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <Label style="-fx-font-size: 18px;" text="Sell Stock" />
+
+    <Label text="Stock:" />
+    <Label fx:id="stockNameLabel" style="-fx-font-size: 14px;" />
+
+    <Label text="Number of Tokens to Sell" />
+
+    <!-- Token Selection Area -->
+    <HBox alignment="CENTER" spacing="10">
+        <!-- Down Arrow Button -->
+        <Button fx:id="decrementButton" style="-fx-font-size: 16px;" text="↓" />
+
+        <!-- Label to Show Current Token Count -->
+        <Label fx:id="tokenCountLabel" style="-fx-font-size: 16px; min-width: 40px; text-align: center;" text="0" />
+
+        <!-- Up Arrow Button -->
+        <Button fx:id="incrementButton" style="-fx-font-size: 16px;" text="↑" />
+    </HBox>
+
+    <Label text="Stock Value" />
+    <Label fx:id="value" style="-fx-font-size: 14px;" />
+
+    <Button fx:id="sellButton" onAction="#handleSellButton" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Sell" />
+</VBox>

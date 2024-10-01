@@ -39,7 +39,7 @@ if(UserAuthDB.validateUser(email, password))
         mpc.setGmail(email);
         Scene scene=new Scene(root);
         mpc.setStage(stage);
-        mpc.setName(UsersDB.getNameByEmail(email));
+        mpc.setName(UsersDB.getNameByEmail(email),String.valueOf(UsersDB.getBalance(email))+"coins");
         scene.getStylesheets().add(getClass().getResource("Mainpanel.css").toExternalForm());
         stage.setTitle("Dashboard");
         stage.setScene(scene);

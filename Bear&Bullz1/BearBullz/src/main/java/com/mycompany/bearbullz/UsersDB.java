@@ -16,6 +16,7 @@ import static com.mongodb.client.model.Indexes.ascending;
 import com.mongodb.client.model.Updates;
 import static com.mongodb.client.model.Updates.inc;
 import static com.mongodb.client.model.Updates.set;
+import static com.mongodb.client.model.Updates.unset;
 import java.util.ArrayList;
 import java.util.Collections;
 /**
@@ -272,29 +273,26 @@ public class UsersDB {
     }
     // Method to update stock data after selling stocks
     public static void sellStock(String email, String stockName, int numberOfStocksSold, int amountFromSale) {
-        // Connect to MongoDB Atlas (replace <connection_string> with your actual connection string)
-        MongoClient mongoClient = MongoClients.create("mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/");
-        MongoDatabase database = mongoClient.getDatabase("BEARBULLZ");
-        MongoCollection<Document> collection = database.getCollection("USERS");
+    MongoClient mongoClient = MongoClients.create("mongodb+srv://sanshuman4422:umangbsdk@cluster0.pi8si.mongodb.net/");
+    MongoDatabase database = mongoClient.getDatabase("BEARBULLZ");
+    MongoCollection<Document> collection = database.getCollection("USERS");
 
-        // Find the user's document by GMAIL
-        Document userDoc = collection.find(eq("GMAIL", email)).first();
+    Document userDoc = collection.find(eq("GMAIL", email)).first();
 
-        if (userDoc != null) {
-            Document stocks = (Document) userDoc.get("STOCKS");
+    if (userDoc != null) {
+        Document stocks = (Document) userDoc.get("STOCKS");
 
-            // Check if the user owns the stock
-            if (stocks != null && stocks.containsKey(stockName.toUpperCase())) {
-                Document stockDoc = (Document) stocks.get(stockName.toUpperCase());
+        if (stocks != null && stocks.containsKey(stockName.toUpperCase())) {
+            Document stockDoc = (Document) stocks.get(stockName.toUpperCase());
 
-                int currentQuantity = stockDoc.getInteger("QUANTITY");
-                int currentInvestment = stockDoc.getInteger("INVESTMENT");
+            int currentQuantity = stockDoc.getInteger("QUANTITY");
+            int currentInvestment = stockDoc.getInteger("INVESTMENT");
 
-                // Ensure the user has enough stocks to sell
-                if (currentQuantity >= numberOfStocksSold) {
-                    int newQuantity = currentQuantity - numberOfStocksSold;
-                    int newInvestment = currentInvestment - amountFromSale;
+            if (currentQuantity >= numberOfStocksSold) {
+                int newQuantity = currentQuantity - numberOfStocksSold;
+                int newInvestment = currentInvestment - amountFromSale;
 
+                if (newQuantity > 0) {
                     // Update the quantity and investment in the database
                     collection.updateOne(
                         eq("GMAIL", email),
@@ -306,15 +304,22 @@ public class UsersDB {
                         set("STOCKS." + stockName.toUpperCase() + ".INVESTMENT", newInvestment)
                     );
                 } else {
-                    System.out.println("Error: Not enough stocks to sell.");
+                    // Remove the stock entry if quantity becomes less than or equal to zero
+                    collection.updateOne(
+                        eq("GMAIL", email),
+                        unset("STOCKS." + stockName.toUpperCase())
+                    );
                 }
             } else {
-                System.out.println("Error: Stock not found.");
+                System.out.println("Error: Not enough stocks to sell.");
             }
+        } else {
+            System.out.println("Error: Stock not found.");
         }
-
-        // Close the connection
-        mongoClient.close();
+    } else {
+        System.out.println("Error: User not found.");
     }
+}
+
     
 }

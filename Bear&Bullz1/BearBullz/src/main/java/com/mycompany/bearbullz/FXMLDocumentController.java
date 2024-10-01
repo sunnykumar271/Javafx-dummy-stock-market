@@ -82,7 +82,7 @@ public class FXMLDocumentController implements Initializable {
         mpc.setStage(stage);
         Scene scene = new Scene(root);
         mpc.setStage(stage);
-        mpc.setName(Name);
+        mpc.setName(Name,"50000 coins");
         mpc.setGmail(gmail);
         scene.getStylesheets().add(getClass().getResource("mainpanel.css").toExternalForm());
         stage.setTitle("Dashboard");

@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.mycompany.bearbullz.leaderboardController" prefWidth="700" prefHeight="600" style="-fx-background-color: #D6EAF8;"> <!-- Light blue background -->
-    <VBox fx:id="leaderboardContainer" layoutX="50.0" layoutY="50.0" prefWidth="600" spacing="20">
-        <!-- Title Label -->
-        <Label text="Leaderboard" styleClass="leaderboard-title"/>
-    </VBox>
+<AnchorPane maxWidth="600.0" prefHeight="700.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.bearbullz.leaderboardController">
+   <children>
+      <TextField alignment="CENTER" editable="false" layoutX="8.0" prefHeight="62.0" prefWidth="693.0" text="LEADERBOARDS">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font>
+      </TextField>
+      <ScrollPane hbarPolicy="NEVER" layoutX="3.0" layoutY="81.0" prefHeight="618.0" prefWidth="702.0">
+         <content> <!-- Light blue background -->
+             <VBox fx:id="leaderboardContainer" prefWidth="600" />
+         </content>
+      </ScrollPane>
+   </children>
 </AnchorPane>

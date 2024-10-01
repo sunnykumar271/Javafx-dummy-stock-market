@@ -5,6 +5,7 @@
 package com.mycompany.bearbullz;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.Optional;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,6 +32,8 @@ public class mainpanelcontroller {
    Label fullName;
    @FXML
    BorderPane Canvas;
+   @FXML
+   Label Balance;
    
     // Assign the stage after FXMLLoader loads the controller
     public void setStage(Stage s) {
@@ -40,17 +43,22 @@ public class mainpanelcontroller {
     {this.Gmail=Gmail;
     }
     @FXML
-    public void setName(String Name)
+    public void setName(String Name,String Balance)
     {
         fullName.setText(Name);
+        this.Balance.setText(Balance);
     }
     public void home(ActionEvent e) throws IOException
-    {
-        Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-     
+    {FXMLLoader loader = new FXMLLoader(getClass().getResource("HomePage.fxml"));
+    
+     Parent root=loader.load();
+     HomePageController hpc = loader.getController();
+    hpc.Canvas=Canvas;
+    hpc.email=Gmail;
+    hpc.setStage(stage);
     // Assuming Canvas is a BorderPane (or another Pane type)
     Canvas.setCenter(root);
-        
+         Canvas.getStylesheets().add(getClass().getResource("leaderboard.css").toExternalForm());
     }
     public void portfolio(ActionEvent e)
     {
