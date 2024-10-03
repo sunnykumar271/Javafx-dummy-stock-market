@@ -1,0 +1,73 @@
+
+/* Styling for the ScrollPane */
+ScrollPane {
+    -fx-background-color: transparent;
+}
+
+/* Styling for the entire GridPane container */
+GridPane {
+    -fx-background-image: url('dollar..jpg'); /* Use the money background image */
+    -fx-background-size: cover;
+    -fx-padding: 20px;
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+    -fx-border-color: white;
+    -fx-border-width: 5px;
+    -fx-border-radius: 10px;
+}
+
+/* Styling for each VBox (profile container) */
+VBox {
+/*    -fx-background-color: rgba(0, 0, 0, 0.6);  Semi-transparent black background */
+    -fx-background-radius: 15px;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 5);
+}
+
+/* ImageView Styling - Circular profile picture */
+ImageView {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 10, 0, 0, 5);
+    -fx-border-color: white;
+    -fx-border-width: 3px;
+    -fx-border-radius: 50%;
+    -fx-clip: rect(0px, 138px, 138px, 0px); /* Adjusts the circular clipping */
+    -fx-padding: 10px;
+}
+
+/* Label styling for names */
+Label {
+    -fx-font-family: "Arial Black";
+    -fx-font-size: 16px;
+    -fx-text-fill: #f6f6f6;
+    -fx-background-color: #d90f0f; /* Red background for names */
+    -fx-padding: 5px 15px;
+    -fx-background-radius: 5px;
+    -fx-wrap-text: true;
+}
+
+/* Styling for the text in the TextArea (bio) */
+TextArea {
+    -fx-control-inner-background: transparent; /* Transparent background */
+    -fx-text-fill: black; /* White text */
+    -fx-border-color: white;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-family: "Arial Bold Italic";
+    -fx-font-size: 14px;
+    -fx-opacity: 0.85;
+}
+
+/* Hyperlink styling */
+Hyperlink {
+    -fx-text-fill: #00acee; /* Twitter-blue color for links */
+    -fx-font-size: 12px;
+    -fx-underline: true;
+}
+
+/* Add hover effects for the VBox to enhance interaction */
+VBox:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: #ffffff;
+}

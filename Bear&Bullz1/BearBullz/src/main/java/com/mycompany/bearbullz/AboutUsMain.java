@@ -16,7 +16,8 @@ public class AboutUsMain extends Application {
         
         // Set the scene with a given width and height
         Scene scene = new Scene(root);
-        
+        scene.getStylesheets().add(getClass().getResource("about_us.css").toExternalForm());
+        primaryStage.setTitle("aboutus Page");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
